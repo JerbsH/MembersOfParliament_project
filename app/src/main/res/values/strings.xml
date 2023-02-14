@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">MembersOfParliament_project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Choose what to show</string>
+    <string name="show_everyone">Show everyone</string>
+    <string name="show_party">Show a party</string>
+    <string name="name">Name:</string>
+    <string name="party">Party:</string>
+    <string name="constituency">Constituency</string>
+    <string name="bornYear">Birth year:</string>
+    <string name="seatNumber">Seat number:</string>
+    <string name="picture">Picture of Member</string>
 </resources>
