@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/mainView">
 
     <activity
         android:id="@+id/mainActivity"
@@ -14,7 +14,7 @@
         android:id="@+id/showEveryone"
         android:name="com.example.membersofparliament_project.showEveryone"
         android:label="fragment_show_everyone"
-        tools:layout="@layout/fragment_show_everyone" >
+        tools:layout="@layout/fragment_show_everyone">
         <action
             android:id="@+id/action_showEveryone_to_singleMember"
             app:destination="@id/singleMember" />
@@ -23,7 +23,7 @@
         android:id="@+id/showParty"
         android:name="com.example.membersofparliament_project.showParty"
         android:label="fragment_show_party"
-        tools:layout="@layout/fragment_show_party" >
+        tools:layout="@layout/fragment_show_party">
         <action
             android:id="@+id/action_showParty_to_singleMember2"
             app:destination="@id/singleMember" />
@@ -32,7 +32,7 @@
         android:id="@+id/singleMember"
         android:name="com.example.membersofparliament_project.singleMember"
         android:label="fragment_single_member"
-        tools:layout="@layout/fragment_single_member" >
+        tools:layout="@layout/fragment_single_member">
         <action
             android:id="@+id/action_singleMember_to_memberComment"
             app:destination="@id/memberComment" />
@@ -41,7 +41,7 @@
         android:id="@+id/mainView"
         android:name="com.example.membersofparliament_project.mainView"
         android:label="fragment_main_view"
-        tools:layout="@layout/fragment_main_view" >
+        tools:layout="@layout/fragment_main_view">
         <action
             android:id="@+id/action_mainView_to_showEveryone"
             app:destination="@id/showEveryone" />
@@ -53,7 +53,7 @@
         android:id="@+id/selectParty"
         android:name="com.example.membersofparliament_project.selectParty"
         android:label="fragment_select_party"
-        tools:layout="@layout/fragment_select_party" >
+        tools:layout="@layout/fragment_select_party">
         <action
             android:id="@+id/action_selectParty_to_showParty"
             app:destination="@id/showParty" />

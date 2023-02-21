@@ -10,4 +10,6 @@
     <string name="bornYear">Birth year:</string>
     <string name="seatNumber">Seat number:</string>
     <string name="picture">Picture of Member</string>
+    <string name="header">Members of Parliament</string>
+    <string name="oops">Something went wrong, you shouldn\'t be able to see this :D</string>
 </resources>
