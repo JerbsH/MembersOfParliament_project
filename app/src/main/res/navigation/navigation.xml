@@ -12,7 +12,7 @@
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/showEveryone"
-        android:name="com.example.membersofparliament_project.showEveryone"
+        android:name="com.example.membersofparliament_project.ShowEveryone"
         android:label="fragment_show_everyone"
         tools:layout="@layout/fragment_show_everyone">
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainView"
-        android:name="com.example.membersofparliament_project.mainView"
+        android:name="com.example.membersofparliament_project.MainView"
         android:label="fragment_main_view"
         tools:layout="@layout/fragment_main_view">
         <action

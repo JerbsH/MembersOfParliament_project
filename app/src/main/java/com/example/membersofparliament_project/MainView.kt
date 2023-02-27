@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.membersofparliament_project.databinding.FragmentMainViewBinding
 
-class mainView : Fragment() {
+//Shows two buttons with options what to view.
+//Show everyone button shows a list of all members and show party shows the list of parties.
+class MainView : Fragment() {
     lateinit var _binding: FragmentMainViewBinding
     private val binding get() = _binding
     override fun onCreateView(
@@ -23,7 +25,7 @@ class mainView : Fragment() {
             findNavController().navigate(R.id.action_mainView_to_selectParty)
         }
         // Inflate the layout for this fragment
-        return binding.root //inflater.inflate(R.layout.fragment_main_view, container, false)
+        return binding.root
     }
 
 }
