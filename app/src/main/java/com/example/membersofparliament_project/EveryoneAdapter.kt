@@ -1,9 +1,12 @@
 package com.example.membersofparliament_project
 
 import MemberOfParliament
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
+import androidx.navigation.navArgument
 import androidx.recyclerview.widget.RecyclerView
 import com.example.membersofparliament_project.databinding.RecyclerviewItemBinding
 
@@ -14,10 +17,12 @@ class EveryoneAdapter(val members: List<MemberOfParliament>):RecyclerView.Adapte
             itemBinding.name.text = members.first + " " + members.last
             itemBinding.party.text = members.party
         }
+
         init {
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
-                Navigation.findNavController(itemView).navigate(R.id.action_showEveryone_to_singleMember)
+                var action = ShowEveryoneDirections.actionShowEveryoneToSingleMember(position.toString())
+                Navigation.findNavController(itemView).navigate(action)
             }
         }
     }

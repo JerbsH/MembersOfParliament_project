@@ -36,6 +36,10 @@
         <action
             android:id="@+id/action_singleMember_to_memberComment"
             app:destination="@id/memberComment" />
+        <argument
+            android:name="number"
+            app:argType="string"
+            />
     </fragment>
     <fragment
         android:id="@+id/mainView"
