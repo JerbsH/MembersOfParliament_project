@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_showParty_to_singleMember2"
             app:destination="@id/singleMember" />
+        <argument
+            android:name="party"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/singleMember"
@@ -38,8 +41,7 @@
             app:destination="@id/memberComment" />
         <argument
             android:name="number"
-            app:argType="string"
-            />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/mainView"
@@ -55,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectParty"
-        android:name="com.example.membersofparliament_project.selectParty"
+        android:name="com.example.membersofparliament_project.SelectParty"
         android:label="fragment_select_party"
         tools:layout="@layout/fragment_select_party">
         <action

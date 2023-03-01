@@ -11,13 +11,12 @@ import com.example.membersofparliament_project.databinding.FragmentMainViewBindi
 //Shows two buttons with options what to view.
 //Show everyone button shows a list of all members and show party shows the list of parties.
 class MainView : Fragment() {
-    lateinit var _binding: FragmentMainViewBinding
-    private val binding get() = _binding
+    lateinit var binding: FragmentMainViewBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainViewBinding.inflate(layoutInflater)
+        binding = FragmentMainViewBinding.inflate(layoutInflater)
         binding.btnEveryone.setOnClickListener {
             findNavController().navigate(R.id.action_mainView_to_showEveryone)
         }

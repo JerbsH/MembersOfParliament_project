@@ -1,12 +1,9 @@
 package com.example.membersofparliament_project
 
 import MemberOfParliament
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
-import androidx.navigation.navArgument
 import androidx.recyclerview.widget.RecyclerView
 import com.example.membersofparliament_project.databinding.RecyclerviewItemBinding
 
@@ -21,7 +18,7 @@ class EveryoneAdapter(val members: List<MemberOfParliament>):RecyclerView.Adapte
         init {
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
-                var action = ShowEveryoneDirections.actionShowEveryoneToSingleMember(position.toString())
+                val action = ShowEveryoneDirections.actionShowEveryoneToSingleMember(position.toString())
                 Navigation.findNavController(itemView).navigate(action)
             }
         }
