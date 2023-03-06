@@ -18,12 +18,12 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface PlayerApiService {
+interface ParliamentApiService {
     @GET("seating.json")
-    suspend fun getPlayerList(): List<ParliamentMember>
+    suspend fun getMemberlist(): List<ParliamentMember>
 }
 
 object ParliamentAPI {
-    val retrofitService : PlayerApiService by lazy {
-        retrofit.create(PlayerApiService::class.java) }
+    val retrofitService : ParliamentApiService by lazy {
+        retrofit.create(ParliamentApiService::class.java) }
 }

@@ -7,13 +7,12 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.membersofparliament_project.databinding.RecyclerviewItemBinding
 
-class SinglePartyAdapter(val members: List<MemberOfParliament>):RecyclerView.Adapter<SinglePartyAdapter.SinglePartyViewHolder>() {
+class SinglePartyAdapter(val members: List<String>):RecyclerView.Adapter<SinglePartyAdapter.SinglePartyViewHolder>() {
 
     inner class SinglePartyViewHolder(val itemBinding: RecyclerviewItemBinding):RecyclerView.ViewHolder(itemBinding.root){
 
-       fun bindItem(members: MemberOfParliament){
-           itemBinding.name.text = members.first
-           itemBinding.party.text = members.last
+       fun bindItem(members: String){
+           itemBinding.name.text = members
        }
         init {
             itemView.setOnClickListener {

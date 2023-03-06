@@ -7,11 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.navArgs
 import com.example.membersofparliament_project.databinding.FragmentSingleMemberBinding
 
 class singleMember : Fragment() {
-
+    lateinit var viewModel: SingleMemberViewModel
     lateinit var binding: FragmentSingleMemberBinding
     val args: singleMemberArgs by navArgs()
     override fun onCreateView(
@@ -30,4 +31,8 @@ class singleMember : Fragment() {
         binding.imageView.setImageResource(R.drawable.perhaps)
         return binding.root
     }
+}
+
+class SingleMemberViewModel: ViewModel(){
+
 }

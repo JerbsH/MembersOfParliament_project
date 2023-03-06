@@ -2,14 +2,15 @@ package com.example.membersofparliament_project
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import kotlinx.coroutines.selects.select
 
 @Entity
 data class ParliamentMember(
     @PrimaryKey
     val hetekaId: Int,
     val seatNumber: Int = 0,
-    val lastName: String,
-    val firstName: String,
+    val lastname: String,
+    val firstname: String,
     val party: String,
     val minister: Boolean = true,
     val pictureUrl: String = ""
@@ -21,4 +22,7 @@ interface ParliamentMemberDAO {
     suspend fun insert(entry: ParliamentMember)
     @Query("select * from ParliamentMember")
     fun getAll(): LiveData<List<ParliamentMember>>
+
+    @Query("SELECT * FROM ParliamentMember WHERE party = :party")
+    fun getParty(party: String): LiveData<List<ParliamentMember>>
 }

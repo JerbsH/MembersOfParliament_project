@@ -12,8 +12,8 @@ class PartyAdapter(val parties: List<String>):RecyclerView.Adapter<PartyAdapter.
 
     inner class PartyViewHolder(val itemBinding: RecyclerviewItemBinding):RecyclerView.ViewHolder(itemBinding.root){
 
-        fun bindItem(String: String){
-            itemBinding.name.text = parties[position]
+        fun bindItem(members: String){
+            itemBinding.name.text = members
         }
         init {
             itemView.setOnClickListener {

@@ -1,6 +1,7 @@
 package com.example.membersofparliament_project
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ class MainView : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("test", "Oncreateview called")
         viewModel = MainViewViewModel()
         binding = FragmentMainViewBinding.inflate(layoutInflater)
         binding.btnEveryone.setOnClickListener {
@@ -34,6 +36,7 @@ class MainView : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
+        Log.d("test", "onviewcreated called")
         viewModel.readMembers()
         viewModel.member.observe(viewLifecycleOwner){
             println("member changed")
@@ -45,16 +48,19 @@ class MainViewViewModel: ViewModel(){
     var member: MutableLiveData<List<ParliamentMember>> = MutableLiveData()
 
     fun readMembers(){
+        Log.d("test", "readMembers called")
         viewModelScope.launch {
             try {
                 val dao = ParliamentDB.getInstance().parliamentMemberDAO
-                member.value = ParliamentAPI.retrofitService.getPlayerList()
+                Log.d("test", "in try")
+                member.value = ParliamentAPI.retrofitService.getMemberlist()
                 println("Read members from parliament with great success.")
                 member.value?.forEach{
                     dao.insert(it)
                 }
                 println("Written to database")
             } catch (e: Exception){
+                Log.d("test", "in catch")
                 println("No luck in reading members from parliament: $e")
             }
         }
