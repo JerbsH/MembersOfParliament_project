@@ -1,7 +1,11 @@
 package com.example.membersofparliament_project
 
 import androidx.lifecycle.LiveData
-
+/*
+* Jere Hippeläinen
+* 2113583
+* 6.3.2023
+*/
 object MemberRepo {
     private val dao = ParliamentDB.getInstance().parliamentMemberDAO
     val logData: LiveData<List<ParliamentMember>> = dao.getAll()

@@ -16,12 +16,21 @@ import kotlinx.coroutines.launch
 //Shows two buttons with options what to view.
 //Show everyone button shows a list of all members and show party shows the list of parties.
 class MainView : Fragment() {
-    lateinit var binding: FragmentMainViewBinding
-    lateinit var viewModel: MainViewViewModel
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * First fragment with two buttons.
+    * First button lists all members.
+    * Second button lists all parties.
+    */
+    private lateinit var binding: FragmentMainViewBinding
+    private lateinit var viewModel: MainViewViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d("test", "Oncreateview called")
         viewModel = MainViewViewModel()
         binding = FragmentMainViewBinding.inflate(layoutInflater)
@@ -45,8 +54,14 @@ class MainView : Fragment() {
 }
 
 class MainViewViewModel: ViewModel(){
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * MainView ViewModel gets the members to database from the source
+    */
     var member: MutableLiveData<List<ParliamentMember>> = MutableLiveData()
-
     fun readMembers(){
         Log.d("test", "readMembers called")
         viewModelScope.launch {
@@ -64,5 +79,6 @@ class MainViewViewModel: ViewModel(){
                 println("No luck in reading members from parliament: $e")
             }
         }
+
     }
 }

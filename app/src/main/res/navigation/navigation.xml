@@ -33,12 +33,9 @@
     </fragment>
     <fragment
         android:id="@+id/singleMember"
-        android:name="com.example.membersofparliament_project.singleMember"
+        android:name="com.example.membersofparliament_project.SingleMember"
         android:label="fragment_single_member"
         tools:layout="@layout/fragment_single_member">
-        <action
-            android:id="@+id/action_singleMember_to_memberComment"
-            app:destination="@id/memberComment" />
         <argument
             android:name="number"
             app:argType="string" />
@@ -64,9 +61,4 @@
             android:id="@+id/action_selectParty_to_showParty"
             app:destination="@id/showParty" />
     </fragment>
-    <fragment
-        android:id="@+id/memberComment"
-        android:name="com.example.membersofparliament_project.memberComment"
-        android:label="fragment_member_comment"
-        tools:layout="@layout/fragment_member_comment" />
 </navigation>

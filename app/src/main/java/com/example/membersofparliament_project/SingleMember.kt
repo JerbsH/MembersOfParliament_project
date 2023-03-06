@@ -12,22 +12,30 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.navArgs
 import com.example.membersofparliament_project.databinding.FragmentSingleMemberBinding
 
-class singleMember : Fragment() {
+class SingleMember : Fragment() {
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * Fragment for showing single member view.
+    * Lists name, party, seat number and id.
+    */
     lateinit var viewModel: SingleMemberViewModel
     lateinit var binding: FragmentSingleMemberBinding
-    val args: singleMemberArgs by navArgs()
+    val args: SingleMemberArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d("test", "args value alussa: $args")
-        val correctId = args.number?.split(":")?.last()
+        val correctId = args.number.split(":").last()
         Log.d("test", "id value: $correctId")
-        viewModel = SingleMemberViewModel(correctId?.toInt())
+        viewModel = SingleMemberViewModel(correctId.toInt())
         Log.d("test", viewModel.members.toString())
         binding = FragmentSingleMemberBinding.inflate(layoutInflater)
         viewModel.members.observe(viewLifecycleOwner){
-            binding.textView3.text = it.toString().removePrefix("[").removeSuffix("]")
+            binding.textView3.text = it.toString().removePrefix("[").removeSuffix("]") //Sets information to a textView and removes [ from the beginning and ] from the end
         }
         return binding.root
     }

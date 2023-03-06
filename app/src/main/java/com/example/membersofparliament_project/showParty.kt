@@ -13,6 +13,13 @@ import androidx.navigation.fragment.navArgs
 import com.example.membersofparliament_project.databinding.FragmentShowPartyBinding
 
 class showParty : Fragment() {
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * Shows member of a single party chosen in previous fragment.
+    */
     lateinit var viewModel: ShowPartyViewModel
     lateinit var binding: FragmentShowPartyBinding
     val args: showPartyArgs by navArgs()
@@ -20,7 +27,8 @@ class showParty : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        //Using savedStateHandle to pass navigation arguments to ViewModel
         viewModel = ShowPartyViewModel(savedStateHandle = args.toSavedStateHandle())
         binding = FragmentShowPartyBinding.inflate(layoutInflater)
         viewModel.members.observe(viewLifecycleOwner){

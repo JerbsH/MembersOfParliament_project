@@ -2,7 +2,11 @@ package com.example.membersofparliament_project
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    */
 @Entity
 data class ParliamentMember(
     @PrimaryKey

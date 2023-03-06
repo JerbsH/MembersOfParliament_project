@@ -11,12 +11,21 @@ import androidx.lifecycle.ViewModel
 import com.example.membersofparliament_project.databinding.FragmentSelectPartyBinding
 
 class SelectParty : Fragment() {
-    lateinit var viewModel: SelectPartyViewModel
-    lateinit var binding: FragmentSelectPartyBinding
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * Party selection fragment with recyclerview.
+    * Lists all parties found in the database.
+    * Items are clickable.
+    */
+    private lateinit var viewModel: SelectPartyViewModel
+    private lateinit var binding: FragmentSelectPartyBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel = SelectPartyViewModel()
         binding = FragmentSelectPartyBinding.inflate(layoutInflater)
         viewModel.parties.observe(viewLifecycleOwner){

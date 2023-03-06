@@ -8,17 +8,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.membersofparliament_project.databinding.RecyclerviewItemBinding
 
 class PartyAdapter(val parties: List<String>):RecyclerView.Adapter<PartyAdapter.PartyViewHolder>() {
-
+    /*
+    * Jere Hippeläinen
+    * 2113583
+    * 6.3.2023
+    *
+    * Adapter for party list recyclerview.
+    *
+    */
     inner class PartyViewHolder(val itemBinding: RecyclerviewItemBinding):RecyclerView.ViewHolder(itemBinding.root){
 
         fun bindItem(members: String){
             itemBinding.name.text = members
         }
+
+        /*
+        * Creates an OnClickListener for single item.
+        * gets position of clicked item and send it to the action as an argument
+        */
         init {
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
                 val action = SelectPartyDirections.actionSelectPartyToShowParty(parties[position])
-                Log.d("bug", parties[position])
+                Log.d("test", parties[position])
                 Navigation.findNavController(itemView).navigate(action)
             }
         }
