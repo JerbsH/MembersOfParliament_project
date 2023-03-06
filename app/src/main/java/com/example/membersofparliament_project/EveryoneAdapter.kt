@@ -33,12 +33,15 @@ class EveryoneAdapter(val members: List<String>):RecyclerView.Adapter<EveryoneAd
             }
         }
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EveryoneViewHolder {
         return EveryoneViewHolder(RecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
+
     override fun getItemCount(): Int {
         return members.size
     }
+
     override fun onBindViewHolder(holder: EveryoneViewHolder, position: Int) {
         val item = members[position]
         holder.bindItem(item)

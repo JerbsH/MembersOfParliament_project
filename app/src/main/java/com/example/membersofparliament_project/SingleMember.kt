@@ -24,18 +24,21 @@ class SingleMember : Fragment() {
     lateinit var viewModel: SingleMemberViewModel
     lateinit var binding: FragmentSingleMemberBinding
     val args: SingleMemberArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         Log.d("test", "args value alussa: $args")
+        //Gets the person ID from the arguments
         val correctId = args.number.split(":").last()
         Log.d("test", "id value: $correctId")
         viewModel = SingleMemberViewModel(correctId.toInt())
         Log.d("test", viewModel.members.toString())
         binding = FragmentSingleMemberBinding.inflate(layoutInflater)
         viewModel.members.observe(viewLifecycleOwner){
-            binding.textView3.text = it.toString().removePrefix("[").removeSuffix("]") //Sets information to a textView and removes [ from the beginning and ] from the end
+            //Sets information to a textView and removes [ from the beginning and ] from the end
+            binding.textView3.text = it.toString().removePrefix("[").removeSuffix("]")
         }
         return binding.root
     }

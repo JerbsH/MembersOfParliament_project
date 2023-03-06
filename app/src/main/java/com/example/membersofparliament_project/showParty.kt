@@ -41,6 +41,6 @@ class showParty : Fragment() {
 class ShowPartyViewModel(savedStateHandle: SavedStateHandle): ViewModel(){
     val party: String? = savedStateHandle["party"]
     var members: LiveData<List<String>> = Transformations.map(MemberRepo.getPartyMembers(party.toString())){
-        it.map {"${it.firstname} ${it.lastname} Seat number: ${it.seatNumber} Id:${it.hetekaId}"}.toSortedSet().toList()
+        it.map {"${it.firstname} ${it.lastname}, Id:${it.hetekaId}"}.toSortedSet().toList()
         }
 }

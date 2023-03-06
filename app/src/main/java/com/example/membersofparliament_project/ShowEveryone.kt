@@ -20,6 +20,7 @@ class ShowEveryone : Fragment() {
     */
     private lateinit var binding: FragmentShowEveryoneBinding
     private lateinit var viewModel: EveryoneListViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +35,6 @@ class ShowEveryone : Fragment() {
 }
 class EveryoneListViewModel: ViewModel(){
     var members: LiveData<List<String>> = Transformations.map(MemberRepo.logData){
-        it.map { "${it.firstname} ${it.lastname} Party: ${it.party} Id:${it.hetekaId}" }.toSortedSet().toList()
+        it.map { "${it.firstname} ${it.lastname}, Party: ${it.party}, Id:${it.hetekaId}" }.toSortedSet().toList()
     }
 }

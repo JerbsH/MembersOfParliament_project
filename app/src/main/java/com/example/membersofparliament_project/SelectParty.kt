@@ -22,6 +22,7 @@ class SelectParty : Fragment() {
     */
     private lateinit var viewModel: SelectPartyViewModel
     private lateinit var binding: FragmentSelectPartyBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
