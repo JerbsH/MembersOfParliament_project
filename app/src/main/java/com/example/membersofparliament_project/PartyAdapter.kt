@@ -4,7 +4,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.navArgument
 import androidx.recyclerview.widget.RecyclerView
 import com.example.membersofparliament_project.databinding.RecyclerviewItemBinding
 

@@ -1,6 +1,5 @@
 package com.example.membersofparliament_project
 
-import ParliamentMembersData
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,7 +32,7 @@ class ShowEveryone : Fragment() {
 
 }
 class EveryoneListViewModel: ViewModel(){
-    var members: LiveData<List<String>> = Transformations.map(ParliamentDB.getInstance().parliamentMemberDAO.getAll()){
-        it.map { "${it.firstname} ${it.lastname} Party: ${it.party}" }.toSortedSet().toList()
+    var members: LiveData<List<String>> = Transformations.map(MemberRepo.logData){
+        it.map { "${it.firstname} ${it.lastname} Party: ${it.party} Id:${it.hetekaId}" }.toSortedSet().toList()
     }
 }

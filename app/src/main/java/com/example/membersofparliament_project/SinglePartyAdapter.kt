@@ -1,6 +1,6 @@
 package com.example.membersofparliament_project
 
-import MemberOfParliament
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -17,7 +17,8 @@ class SinglePartyAdapter(val members: List<String>):RecyclerView.Adapter<SingleP
         init {
             itemView.setOnClickListener {
                 val position: Int = adapterPosition
-                val action = showPartyDirections.actionShowPartyToSingleMember2(position.toString())
+                val action = showPartyDirections.actionShowPartyToSingleMember2(members[position])
+                Log.d("test", members[position])
                 Navigation.findNavController(itemView).navigate(action)
             }
         }

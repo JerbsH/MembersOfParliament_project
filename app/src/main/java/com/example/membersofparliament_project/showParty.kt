@@ -22,7 +22,6 @@ class showParty : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel = ShowPartyViewModel(savedStateHandle = args.toSavedStateHandle())
-
         binding = FragmentShowPartyBinding.inflate(layoutInflater)
         viewModel.members.observe(viewLifecycleOwner){
             binding.partyRV.adapter = SinglePartyAdapter(it)
@@ -33,7 +32,7 @@ class showParty : Fragment() {
 
 class ShowPartyViewModel(savedStateHandle: SavedStateHandle): ViewModel(){
     val party: String? = savedStateHandle["party"]
-    var members: LiveData<List<String>> = Transformations.map(ParliamentDB.getInstance().parliamentMemberDAO.getParty(party.toString())){
-        it.map {"${it.firstname} ${it.lastname} Seat number: ${it.seatNumber}"}.toSortedSet().toList()
+    var members: LiveData<List<String>> = Transformations.map(MemberRepo.getPartyMembers(party.toString())){
+        it.map {"${it.firstname} ${it.lastname} Seat number: ${it.seatNumber} Id:${it.hetekaId}"}.toSortedSet().toList()
         }
 }
